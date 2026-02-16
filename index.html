@@ -99,3 +99,230 @@
             width: 230px;
             padding: 15px;
             border-radius: 12px;
+            box-shadow: 0 0 10px #ddd;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            color: #333;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background: #1ebe5d;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #d35400;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        /* POPUP MODAL */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 200;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 600px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                width: 90%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-container">
+        <img src="logo.png" alt="गजानन पापड लोगो" class="logo">
+        <div class="brand-text">
+            <h1>गजानन पापड</h1>
+            <p>घरगुती • पारंपारिक • शुद्ध चव</p>
+        </div>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a onclick="openModal('aboutModal')">मुख्यपृष्ठ</a>
+    <a onclick="openModal('productsModal')">उत्पादने</a>
+    <a href="#contact">संपर्क</a>
+</nav>
+
+<!-- ABOUT MODAL -->
+<div id="aboutModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+        <h2>गजानन पापड बद्दल</h2>
+        <p>गजानन पापडची स्थापना 2010 साली झाली. व्यवसाय मालकिणी <strong>श्रीमती मिनाक्षी सोनवणे</strong> यांच्या देखरेखीखाली चालतो, जिथे प्रत्येक पदार्थ पारंपरिक घरगुती चवीसह बनवला जातो. ✅ १००% घरगुती तयारी ✅ पारंपरिक पाककृती ✅ दर्जा आणि स्वच्छता ✅ ताजेतवाने उत्पादन</p>
+    </div>
+</div>
+
+<!-- PRODUCTS MODAL -->
+<div id="productsModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('productsModal')">&times;</span>
+        <h2>आमची उत्पादने</h2>
+        <p>आमच्याकडे उडीद पापड, नागली पापड (स्पेशल), बटाटा पापड, साबुदाणा पापड, स्पेशल खान्देशी बिबडी, लिंबू लोणचे, आंबा लोणचे आणि अनारसे इंस्टंट पीठ (स्पेशल) उपलब्ध आहेत. प्रत्येक पदार्थ पारंपरिक चवीसह तयार केला जातो.</p>
+    </div>
+</div>
+
+<!-- PRODUCTS SECTION -->
+<section id="products">
+    <h2>आमची उत्पादने</h2>
+    <div class="products">
+
+        <div class="card">
+            <img src="udid.jpg" alt="उडीद पापड">
+            <h3>उडीद पापड</h3>
+            <a class="btn" href="https://wa.me/919890746892?text=मला%20उडीद%20पापड%20ऑर्डर%20करायचा%20आहे">WhatsApp ऑर्डर</a>
+        </div>
+
+        <div class="card">
+            <img src="nagali.jpg" alt="नाचणी पापड">
+            <h3>नागलीी पापड (स्पेशल)</h3>
+            <a class="btn" href="https://wa.me/919890746892?text=मला%20नाचणी%20पापड%20ऑर्डर%20करायचा%20आहे">WhatsApp ऑर्डर</a>
+        </div>
+
+        <div class="card">
+            <img src="batata.jpg" alt="बटाटा पापड">
+            <h3>बटाटा पापड</h3>
+            <a class="btn" href="https://wa.me/919890746892?text=मला%20बटाटा%20पापड%20ऑर्डर%20करायचा%20आहे">WhatsApp ऑर्डर</a>
+        </div>
+
+        <div class="card">
+            <img src="sabudana.jpg" alt="साबुदाणा पापड">
+            <h3>साबुदाणा पापड</h3>
+            <a class="btn" href="https://wa.me/919890746892?text=मला%20साबुदाणा%20पापड%20ऑर्डर%20करायचा%20आहे">WhatsApp ऑर्डर</a>
+        </div>
+
+        <div class="card">
+            <img src="bibadi.jpg" alt="स्पेशल खान्देशी बिबडी">
+            <h3>स्पेशल खान्देशी बिबडी</h3>
+            <a class="btn" href="https://wa.me/919890746892?text=मला%20स्पेशल%20खान्देशी%20बिबडी%20ऑर्डर%20करायची%20आहे">WhatsApp ऑर्डर</a>
+        </div>
+
+        <div class="card">
+            <img src="lemon.jpg" alt="लिंबू लोणचे">
+            <h3>लिंबू लोणचे</h3>
+            <a class="btn" href="https://wa.me/919890746892?text=मला%20लिंबू%20लोणचे%20ऑर्डर%20करायचे%20आहे">WhatsApp ऑर्डर</a>
+        </div>
+
+        <div class="card">
+            <img src="mango.jpg" alt="आंबा लोणचे">
+            <h3>आंबा लोणचे</h3>
+            <a class="btn" href="https://wa.me/919890746892?text=मला%20आंबा%20लोणचे%20ऑर्डर%20करायचे%20आहे">WhatsApp ऑर्डर</a>
+        </div>
+
+        <div class="card">
+            <img src="anarse.jpg" alt="अनारसे इंस्टंट पीठ">
+            <h3>अनारसे इंस्टंट पीठ (स्पेशल)</h3>
+            <a class="btn" href="https://wa.me/919890746892?text=मला%20अनारसे%20इंस्टंट%20पीठ%20ऑर्डर%20करायचे%20आहे">WhatsApp ऑर्डर</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+    <h2>संपर्क</h2>
+    <p>आपण आमच्याशी थेट संपर्क साधू शकता:</p>
+    <p>📞 <a href="tel:9890746892</a><br>
+       📧 <a href="mailto:info@gajananpapad.com">info@gajananpapad.com</a><br>
+       📍 नाशिक, महाराष्ट्र, </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 गजानन पापड | नाशिक | संपर्क: <a href="tel:9890746892" style="color:white;">9890746892</a></p>
+</footer>
+
+<!-- JS FOR POPUPS -->
+<script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    // Close modal when clicking outside content
+    window.onclick = function(event) {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
