@@ -12,13 +12,40 @@
             background-color: #fffaf3;
         }
 
+        /* HEADER */
         header {
             background: #d35400;
             color: white;
-            text-align: center;
-            padding: 20px;
+            padding: 15px 20px;
         }
 
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            width: 90px;
+            height: auto;
+            border-radius: 10px;
+            background: white;
+            padding: 5px;
+        }
+
+        .brand-text h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .brand-text p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* NAVIGATION */
         nav {
             background: #f39c12;
             text-align: center;
@@ -32,6 +59,11 @@
             font-weight: bold;
         }
 
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* CONTENT */
         .container {
             padding: 20px;
         }
@@ -50,17 +82,23 @@
 
         .card {
             background: white;
-            width: 220px;
+            width: 230px;
             padding: 15px;
             border-radius: 12px;
             box-shadow: 0 0 10px #ddd;
             text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
         }
 
         .card img {
             width: 100%;
             height: 150px;
             border-radius: 10px;
+            object-fit: cover;
         }
 
         .card h3 {
@@ -82,6 +120,7 @@
             background: #1ebe5d;
         }
 
+        /* FOOTER */
         footer {
             background: #d35400;
             color: white;
@@ -90,20 +129,27 @@
             margin-top: 20px;
         }
 
+        /* MOBILE RESPONSIVE */
         @media (max-width: 600px) {
             .products {
                 flex-direction: column;
                 align-items: center;
             }
         }
+
     </style>
 </head>
 
 <body>
 
 <header>
-    <h1>गजानन पापड</h1>
-    <p>घरगुती • पारंपारिक • शुद्ध चव</p>
+    <div class="header-container">
+        <img src="logo.png" alt="गजानन पापड लोगो" class="logo">
+        <div class="brand-text">
+            <h1>गजानन पापड</h1>
+            <p>घरगुती • पारंपारिक • शुद्ध चव</p>
+        </div>
+    </div>
 </header>
 
 <nav>
@@ -125,7 +171,7 @@
 
         <div class="card">
             <img src="nagali.jpg" alt="नाचणी पापड">
-            <h3>नाचणी पापड</h3>
+            <h3>नाचणी पापड (स्पेशल)</h3>
             <a class="btn" href="https://wa.me/919890746892?text=मला%20नाचणी%20पापड%20ऑर्डर%20करायचा%20आहे">WhatsApp ऑर्डर</a>
         </div>
 
@@ -136,9 +182,21 @@
         </div>
 
         <div class="card">
+            <img src="sabudana.jpg" alt="साबुदाणा पापड">
+            <h3>साबुदाणा पापड</h3>
+            <a class="btn" href="https://wa.me/919890746892?text=मला%20साबुदाणा%20पापड%20ऑर्डर%20करायचा%20आहे">WhatsApp ऑर्डर</a>
+        </div>
+
+        <div class="card">
+            <img src="bibadi.jpg" alt="स्पेशल खान्देशी बिबडी">
+            <h3>स्पेशल खान्देशी बिबडी</h3>
+            <a class="btn" href="https://wa.me/919890746892?text=मला%20स्पेशल%20खान्देशी%20बिबडी%20ऑर्डर%20करायची%20आहे">WhatsApp ऑर्डर</a>
+        </div>
+
+        <div class="card">
             <img src="lemon.jpg" alt="लिंबू लोणचे">
             <h3>लिंबू लोणचे</h3>
-            <a class="btn" href="https://wa.me/919876543210?text=मला%20लिंबू%20लोणचे%20ऑर्डर%20करायचे%20आहे">WhatsApp ऑर्डर</a>
+            <a class="btn" href="https://wa.me/919890746892?text=मला%20लिंबू%20लोणचे%20ऑर्डर%20करायचे%20आहे">WhatsApp ऑर्डर</a>
         </div>
 
         <div class="card">
@@ -147,11 +205,17 @@
             <a class="btn" href="https://wa.me/919890746892?text=मला%20आंबा%20लोणचे%20ऑर्डर%20करायचे%20आहे">WhatsApp ऑर्डर</a>
         </div>
 
+        <div class="card">
+            <img src="anarse.jpg" alt="अनारसे इंस्टंट पीठ">
+            <h3>अनारसे इंस्टंट पीठ (स्पेशल)</h3>
+            <a class="btn" href="https://wa.me/919890746892?text=मला%20अनारसे%20इंस्टंट%20पीठ%20ऑर्डर%20करायचे%20आहे">WhatsApp ऑर्डर</a>
+        </div>
+
     </div>
 </div>
 
 <footer>
-    <p>© 2026 गजानन पापड | नाशिक | संपर्क: 8830425853</p>
+    <p>© 2026 गजानन पापड | नाशिक | संपर्क: 9876543210</p>
 </footer>
 
 </body>
