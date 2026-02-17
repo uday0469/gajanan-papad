@@ -363,8 +363,8 @@
     <p>© 2026 गजानन पापड | नाशिक | संपर्क: <a href="tel:9890746892" style="color:white;">9890746892</a></p>
 </footer>
 
-<!-- JS FOR POPUPS AND WHATSAPP ORDER -->
 <script>
+    // MODAL FUNCTIONS
     function openModal(modalId) {
         document.getElementById(modalId).style.display = "block";
     }
@@ -376,13 +376,11 @@
     window.onclick = function(event) {
         const modals = document.querySelectorAll('.modal');
         modals.forEach(modal => {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+            if (event.target == modal) modal.style.display = "none";
         });
     }
 
-    // Save user info
+    // SAVE USER INFO
     function saveUserInfo() {
         const name = document.getElementById('userName').value.trim();
         const mobile = document.getElementById('userMobile').value.trim();
@@ -399,23 +397,4 @@
         }
     }
 
-    // WhatsApp order with user info
-    function orderWhatsApp(productName) {
-        const savedName = localStorage.getItem('userName') || prompt("आपले नाव टाका:");
-        const savedMobile = localStorage.getItem('userMobile') || prompt("आपला मोबाइल नंबर टाका:");
-        const savedAddress = localStorage.getItem('userAddress') || prompt("आपला पत्ता टाका:");
-
-        let qty = prompt(`कृपया किती किलो ${productName} हवे आहेत ते टाका:`);
-
-        if(qty && !isNaN(qty) && qty > 0) {
-            let message = `माझे नाव: ${savedName}\nमोबाईल: ${savedMobile}\nपत्ता: ${savedAddress}\nमला ${productName} ${qty} किलो ऑर्डर करायचा आहे`;
-            let url = `https://wa.me/919890746892?text=${encodeURIComponent(message)}`;
-            window.open(url, '_blank');
-        } else if(qty !== null) {
-            alert("कृपया वैध संख्या टाका");
-        }
-    }
-</script>
-
-</body>
-</html>
+    // WHATSAPP ORDER WITH ALERT
