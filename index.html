@@ -144,7 +144,7 @@
             margin-top: 20px;
         }
 
-        /* POPUP MODAL */
+        /* MODAL */
         .modal {
             display: none;
             position: fixed;
@@ -182,8 +182,8 @@
             color: #000;
         }
 
-        /* USER FORM */
-        #userInfo input, #userInfo textarea {
+        /* ORDER FORM */
+        #orderForm input, #orderForm textarea {
             width: 90%;
             padding: 8px;
             margin: 5px 0;
@@ -191,16 +191,17 @@
             border: 1px solid #ccc;
         }
 
-        #userInfo button {
+        #orderForm button {
             background: #d35400;
             border: none;
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
+            margin-top: 10px;
         }
 
-        #userInfo button:hover {
+        #orderForm button:hover {
             background: #e67e22;
         }
 
@@ -216,7 +217,6 @@
         }
     </style>
 </head>
-
 <body>
 
 <!-- HEADER -->
@@ -251,22 +251,9 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal('productsModal')">&times;</span>
         <h2>आमची उत्पादने</h2>
-        <p>आमच्याकडे उडीद पापड, नागली पापड (स्पेशल), बटाटा पापड, साबुदाणा पापड, स्पेशल खान्देशी बिबडी, लिंबू लोणचे, आंबा लोणचे, अनारसे इंस्टंट पीठ (स्पेशल), लाल मिरची पावडर नंबर 1, हळद पावडर, धना पावडर, लाल मिरची पावडर नंबर 2 उपलब्ध आहेत. प्रत्येक पदार्थ पारंपरिक चवीसह तयार केला जातो.</p>
+        <p>उडीद पापड, नागली पापड (स्पेशल), बटाटा पापड, साबुदाणा पापड, स्पेशल खान्देशी बिबडी, लिंबू लोणचे, आंबा लोणचे, अनारसे इंस्टंट पीठ (स्पेशल), लाल मिरची पावडर नंबर 1, हळद पावडर, धना पावडर, लाल मिरची पावडर नंबर 2 उपलब्ध आहेत.</p>
     </div>
 </div>
-
-<!-- USER INFORMATION SECTION -->
-<section id="userInfo">
-    <h2>आपली माहिती भरा</h2>
-    <p>कृपया आपले नाव, मोबाइल नंबर आणि पत्ता भरा जेणेकरून आम्ही ऑर्डर प्रक्रिया करू शकू:</p>
-    <form id="userForm">
-        <input type="text" id="userName" placeholder="नाव" required><br>
-        <input type="tel" id="userMobile" placeholder="मोबाईल नंबर" required><br>
-        <textarea id="userAddress" placeholder="पत्ता" required></textarea><br>
-        <button type="button" onclick="saveUserInfo()">जतन करा</button>
-    </form>
-    <p id="userInfoDisplay" style="margin-top:10px; color: green;"></p>
-</section>
 
 <!-- PRODUCTS SECTION -->
 <section id="products">
@@ -277,77 +264,44 @@
         <div class="card">
             <img src="udid.jpg" alt="उडीद पापड">
             <h3>उडीद पापड</h3>
-            <a class="btn" onclick="orderWhatsApp('उडीद पापड')">WhatsApp ऑर्डर</a>
+            <a class="btn" onclick="openOrderModal('उडीद पापड')">ऑर्डर करा</a>
         </div>
 
         <div class="card">
             <img src="nagali.jpg" alt="नागली पापड">
             <h3>नागली पापड (स्पेशल)</h3>
-            <a class="btn" onclick="orderWhatsApp('नागली पापड (स्पेशल)')">WhatsApp ऑर्डर</a>
+            <a class="btn" onclick="openOrderModal('नागली पापड (स्पेशल)')">ऑर्डर करा</a>
         </div>
 
         <div class="card">
             <img src="batata.jpg" alt="बटाटा पापड">
             <h3>बटाटा पापड</h3>
-            <a class="btn" onclick="orderWhatsApp('बटाटा पापड')">WhatsApp ऑर्डर</a>
+            <a class="btn" onclick="openOrderModal('बटाटा पापड')">ऑर्डर करा</a>
         </div>
 
         <div class="card">
             <img src="sabudana.jpg" alt="साबुदाणा पापड">
             <h3>साबुदाणा पापड</h3>
-            <a class="btn" onclick="orderWhatsApp('साबुदाणा पापड')">WhatsApp ऑर्डर</a>
-        </div>
-
-        <div class="card">
-            <img src="bibadi.jpg" alt="स्पेशल खान्देशी बिबडी">
-            <h3>स्पेशल खान्देशी बिबडी</h3>
-            <a class="btn" onclick="orderWhatsApp('स्पेशल खान्देशी बिबडी')">WhatsApp ऑर्डर</a>
-        </div>
-
-        <div class="card">
-            <img src="lemon.jpg" alt="लिंबू लोणचे">
-            <h3>लिंबू लोणचे</h3>
-            <a class="btn" onclick="orderWhatsApp('लिंबू लोणचे')">WhatsApp ऑर्डर</a>
-        </div>
-
-        <div class="card">
-            <img src="mango.jpg" alt="आंबा लोणचे">
-            <h3>आंबा लोणचे</h3>
-            <a class="btn" onclick="orderWhatsApp('आंबा लोणचे')">WhatsApp ऑर्डर</a>
-        </div>
-
-        <div class="card">
-            <img src="anarse.jpg" alt="अनारसे इंस्टंट पीठ">
-            <h3>अनारसे इंस्टंट पीठ (स्पेशल)</h3>
-            <a class="btn" onclick="orderWhatsApp('अनारसे इंस्टंट पीठ (स्पेशल)')">WhatsApp ऑर्डर</a>
-        </div>
-
-        <div class="card">
-            <img src="lal_mirchi1.jpg" alt="लाल मिरची पावडर नंबर 1">
-            <h3>लाल मिरची पावडर नंबर 1</h3>
-            <a class="btn" onclick="orderWhatsApp('लाल मिरची पावडर नंबर 1')">WhatsApp ऑर्डर</a>
-        </div>
-
-        <div class="card">
-            <img src="haldi.jpg" alt="हळद पावडर">
-            <h3>हळद पावडर</h3>
-            <a class="btn" onclick="orderWhatsApp('हळद पावडर')">WhatsApp ऑर्डर</a>
-        </div>
-
-        <div class="card">
-            <img src="dhana.jpg" alt="धना पावडर">
-            <h3>धना पावडर</h3>
-            <a class="btn" onclick="orderWhatsApp('धना पावडर')">WhatsApp ऑर्डर</a>
-        </div>
-
-        <div class="card">
-            <img src="lal_mirchi2.jpg" alt="लाल मिरची पावडर नंबर 2">
-            <h3>लाल मिरची पावडर नंबर 2</h3>
-            <a class="btn" onclick="orderWhatsApp('लाल मिरची पावडर नंबर 2')">WhatsApp ऑर्डर</a>
+            <a class="btn" onclick="openOrderModal('साबुदाणा पापड')">ऑर्डर करा</a>
         </div>
 
     </div>
 </section>
+
+<!-- ORDER MODAL -->
+<div id="orderModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('orderModal')">&times;</span>
+        <h2 id="orderProductTitle">ऑर्डर करा</h2>
+        <form id="orderForm">
+            <input type="number" id="orderQty" placeholder="किती किलो हवे आहेत" min="1" required><br>
+            <input type="text" id="orderName" placeholder="नाव" required><br>
+            <input type="tel" id="orderMobile" placeholder="मोबाईल नंबर" required><br>
+            <textarea id="orderAddress" placeholder="पत्ता" required></textarea><br>
+            <button type="button" onclick="submitOrder()">WhatsApp वर पाठवा</button>
+        </form>
+    </div>
+</div>
 
 <!-- CONTACT SECTION -->
 <section id="contact">
@@ -363,8 +317,8 @@
     <p>© 2026 गजानन पापड | नाशिक | संपर्क: <a href="tel:9890746892" style="color:white;">9890746892</a></p>
 </footer>
 
+<!-- JS -->
 <script>
-    // MODAL FUNCTIONS
     function openModal(modalId) {
         document.getElementById(modalId).style.display = "block";
     }
@@ -380,21 +334,45 @@
         });
     }
 
-    // SAVE USER INFO
-    function saveUserInfo() {
-        const name = document.getElementById('userName').value.trim();
-        const mobile = document.getElementById('userMobile').value.trim();
-        const address = document.getElementById('userAddress').value.trim();
-
-        if(name && mobile && address) {
-            localStorage.setItem('userName', name);
-            localStorage.setItem('userMobile', mobile);
-            localStorage.setItem('userAddress', address);
-
-            document.getElementById('userInfoDisplay').innerText = `संपर्क माहिती जतन झाली: ${name}, ${mobile}, ${address}`;
-        } else {
-            alert("कृपया सर्व माहिती भरा");
-        }
+    // Open order modal with selected product
+    function openOrderModal(productName) {
+        document.getElementById('orderProductTitle').innerText = productName + " ऑर्डर करा";
+        document.getElementById('orderQty').value = '';
+        document.getElementById('orderName').value = localStorage.getItem('userName') || '';
+        document.getElementById('orderMobile').value = localStorage.getItem('userMobile') || '';
+        document.getElementById('orderAddress').value = localStorage.getItem('userAddress') || '';
+        document.getElementById('orderModal').dataset.product = productName;
+        openModal('orderModal');
     }
 
-    // WHATSAPP ORDER WITH ALERT
+    // Submit order via WhatsApp
+    function submitOrder() {
+        const productName = document.getElementById('orderModal').dataset.product;
+        const qty = document.getElementById('orderQty').value.trim();
+        const name = document.getElementById('orderName').value.trim();
+        const mobile = document.getElementById('orderMobile').value.trim();
+        const address = document.getElementById('orderAddress').value.trim();
+
+        if(!qty || qty <= 0) {
+            alert("कृपया वैध प्रमाण भरा");
+            return;
+        }
+        if(!name || !mobile || !address) {
+            alert("कृपया सर्व माहिती भरा");
+            return;
+        }
+
+        // Save to localStorage for future orders
+        localStorage.setItem('userName', name);
+        localStorage.setItem('userMobile', mobile);
+        localStorage.setItem('userAddress', address);
+
+        const message = `माझे नाव: ${name}\nमोबाईल: ${mobile}\nपत्ता: ${address}\nमला ${productName} ${qty} किलो ऑर्डर करायचा आहे`;
+        const url = `https://wa.me/919890746892?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+        closeModal('orderModal');
+    }
+</script>
+
+</body>
+</html>
