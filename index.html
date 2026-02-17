@@ -146,7 +146,7 @@
 
         /* POPUP MODAL */
         .modal {
-            display: none; /* Hidden by default */
+            display: none;
             position: fixed;
             z-index: 200;
             left: 0;
@@ -182,6 +182,28 @@
             color: #000;
         }
 
+        /* USER FORM */
+        #userInfo input, #userInfo textarea {
+            width: 90%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        #userInfo button {
+            background: #d35400;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #userInfo button:hover {
+            background: #e67e22;
+        }
+
         /* MOBILE RESPONSIVE */
         @media (max-width: 600px) {
             .products {
@@ -192,7 +214,6 @@
                 width: 90%;
             }
         }
-
     </style>
 </head>
 
@@ -233,6 +254,19 @@
         <p>आमच्याकडे उडीद पापड, नागली पापड (स्पेशल), बटाटा पापड, साबुदाणा पापड, स्पेशल खान्देशी बिबडी, लिंबू लोणचे, आंबा लोणचे, अनारसे इंस्टंट पीठ (स्पेशल), लाल मिरची पावडर नंबर 1, हळद पावडर, धना पावडर, लाल मिरची पावडर नंबर 2 उपलब्ध आहेत. प्रत्येक पदार्थ पारंपरिक चवीसह तयार केला जातो.</p>
     </div>
 </div>
+
+<!-- USER INFORMATION SECTION -->
+<section id="userInfo">
+    <h2>आपली माहिती भरा</h2>
+    <p>कृपया आपले नाव, मोबाइल नंबर आणि पत्ता भरा जेणेकरून आम्ही ऑर्डर प्रक्रिया करू शकू:</p>
+    <form id="userForm">
+        <input type="text" id="userName" placeholder="नाव" required><br>
+        <input type="tel" id="userMobile" placeholder="मोबाईल नंबर" required><br>
+        <textarea id="userAddress" placeholder="पत्ता" required></textarea><br>
+        <button type="button" onclick="saveUserInfo()">जतन करा</button>
+    </form>
+    <p id="userInfoDisplay" style="margin-top:10px; color: green;"></p>
+</section>
 
 <!-- PRODUCTS SECTION -->
 <section id="products">
@@ -348,10 +382,33 @@
         });
     }
 
+    // Save user info
+    function saveUserInfo() {
+        const name = document.getElementById('userName').value.trim();
+        const mobile = document.getElementById('userMobile').value.trim();
+        const address = document.getElementById('userAddress').value.trim();
+
+        if(name && mobile && address) {
+            localStorage.setItem('userName', name);
+            localStorage.setItem('userMobile', mobile);
+            localStorage.setItem('userAddress', address);
+
+            document.getElementById('userInfoDisplay').innerText = `संपर्क माहिती जतन झाली: ${name}, ${mobile}, ${address}`;
+        } else {
+            alert("कृपया सर्व माहिती भरा");
+        }
+    }
+
+    // WhatsApp order with user info
     function orderWhatsApp(productName) {
+        const savedName = localStorage.getItem('userName') || prompt("आपले नाव टाका:");
+        const savedMobile = localStorage.getItem('userMobile') || prompt("आपला मोबाइल नंबर टाका:");
+        const savedAddress = localStorage.getItem('userAddress') || prompt("आपला पत्ता टाका:");
+
         let qty = prompt(`कृपया किती किलो ${productName} हवे आहेत ते टाका:`);
+
         if(qty && !isNaN(qty) && qty > 0) {
-            let message = `मला ${productName} ${qty} किलो ऑर्डर करायचा आहे`;
+            let message = `माझे नाव: ${savedName}\nमोबाईल: ${savedMobile}\nपत्ता: ${savedAddress}\nमला ${productName} ${qty} किलो ऑर्डर करायचा आहे`;
             let url = `https://wa.me/919890746892?text=${encodeURIComponent(message)}`;
             window.open(url, '_blank');
         } else if(qty !== null) {
