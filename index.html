@@ -12,7 +12,6 @@
             background-color: #fffaf3;
         }
 
-        /* HEADER */
         header {
             background: #d35400;
             color: white;
@@ -45,7 +44,6 @@
             font-size: 14px;
         }
 
-        /* NAVIGATION */
         nav {
             background: #f39c12;
             text-align: center;
@@ -68,7 +66,6 @@
             text-decoration: underline;
         }
 
-        /* CONTENT SECTIONS */
         section {
             padding: 20px;
         }
@@ -86,7 +83,6 @@
             text-align: justify;
         }
 
-        /* PRODUCTS */
         .products {
             display: flex;
             flex-wrap: wrap;
@@ -142,7 +138,6 @@
             background: #1ebe5d;
         }
 
-        /* CART SECTION */
         #cartSection {
             background: #fff8e1;
             padding: 15px;
@@ -181,7 +176,6 @@
             background: #e67e22;
         }
 
-        /* FOOTER */
         footer {
             background: #d35400;
             color: white;
@@ -190,7 +184,6 @@
             margin-top: 20px;
         }
 
-        /* MOBILE RESPONSIVE */
         @media (max-width: 600px) {
             .products {
                 flex-direction: column;
@@ -204,7 +197,6 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
     <div class="header-container">
         <img src="logo.png" alt="गजानन पापड लोगो" class="logo">
@@ -215,14 +207,12 @@
     </div>
 </header>
 
-<!-- NAVIGATION -->
 <nav>
     <a href="#products">उत्पादने</a>
     <a href="#cartSection">ऑर्डर करा</a>
     <a href="#contact">संपर्क</a>
 </nav>
 
-<!-- PRODUCTS SECTION -->
 <section id="products">
     <h2>आमची उत्पादने</h2>
     <div class="products">
@@ -236,17 +226,84 @@
 
         <div class="card">
             <img src="nagali.jpg" alt="नागली पापड">
-            <h3>नागली पापड (स्पेशल)</h3>
-            <input type="number" min="0" value="0" id="qty-नागली पापड (स्पेशल)">
-            <button class="btn" onclick="addToCart('नागली पापड (स्पेशल)')">Add</button>
+            <h3>नागली पापड (शेकडा)</h3>
+            <input type="number" min="0" value="0" id="qty-नागली पापड (शेकडा)">
+            <button class="btn" onclick="addToCart('नागली पापड (शेकडा)')">Add</button>
         </div>
 
-        <!-- Repeat similar cards for all products with unique IDs -->
+        <div class="card">
+            <img src="batata.jpg" alt="बटाटा पापड">
+            <h3>बटाटा पापड</h3>
+            <input type="number" min="0" value="0" id="qty-बटाटा पापड">
+            <button class="btn" onclick="addToCart('बटाटा पापड')">Add</button>
+        </div>
+
+        <div class="card">
+            <img src="sabudana.jpg" alt="साबुदाणा पापड">
+            <h3>साबुदाणा पापड</h3>
+            <input type="number" min="0" value="0" id="qty-साबुदाणा पापड">
+            <button class="btn" onclick="addToCart('साबुदाणा पापड')">Add</button>
+        </div>
+
+        <div class="card">
+            <img src="bibadi.jpg" alt="स्पेशल खान्देशी बिबडी">
+            <h3>स्पेशल खान्देशी बिबडी</h3>
+            <input type="number" min="0" value="0" id="qty-स्पेशल खान्देशी बिबडी">
+            <button class="btn" onclick="addToCart('स्पेशल खान्देशी बिबडी')">Add</button>
+        </div>
+
+        <div class="card">
+            <img src="lemon.jpg" alt="लिंबू लोणचे">
+            <h3>लिंबू लोणचे</h3>
+            <input type="number" min="0" value="0" id="qty-लिंबू लोणचे">
+            <button class="btn" onclick="addToCart('लिंबू लोणचे')">Add</button>
+        </div>
+
+        <div class="card">
+            <img src="mango.jpg" alt="आंबा लोणचे">
+            <h3>आंबा लोणचे</h3>
+            <input type="number" min="0" value="0" id="qty-आंबा लोणचे">
+            <button class="btn" onclick="addToCart('आंबा लोणचे')">Add</button>
+        </div>
+
+        <div class="card">
+            <img src="anarse.jpg" alt="अनारसे इंस्टंट पीठ">
+            <h3>अनारसे इंस्टंट पीठ (स्पेशल)</h3>
+            <input type="number" min="0" value="0" id="qty-अनारसे इंस्टंट पीठ (स्पेशल)">
+            <button class="btn" onclick="addToCart('अनारसे इंस्टंट पीठ (स्पेशल)')">Add</button>
+        </div>
+
+        <div class="card">
+            <img src="lal_mirchi1.jpg" alt="लाल मिरची पावडर नंबर 1">
+            <h3>लाल मिरची पावडर नंबर 1</h3>
+            <input type="number" min="0" value="0" id="qty-लाल मिरची पावडर नंबर 1">
+            <button class="btn" onclick="addToCart('लाल मिरची पावडर नंबर 1')">Add</button>
+        </div>
+
+        <div class="card">
+            <img src="haldi.jpg" alt="हळद पावडर">
+            <h3>हळद पावडर</h3>
+            <input type="number" min="0" value="0" id="qty-हळद पावडर">
+            <button class="btn" onclick="addToCart('हळद पावडर')">Add</button>
+        </div>
+
+        <div class="card">
+            <img src="dhana.jpg" alt="धना पावडर">
+            <h3>धना पावडर</h3>
+            <input type="number" min="0" value="0" id="qty-धना पावडर">
+            <button class="btn" onclick="addToCart('धना पावडर')">Add</button>
+        </div>
+
+        <div class="card">
+            <img src="lal_mirchi2.jpg" alt="लाल मिरची पावडर नंबर 2">
+            <h3>लाल मिरची पावडर नंबर 2</h3>
+            <input type="number" min="0" value="0" id="qty-लाल मिरची पावडर नंबर 2">
+            <button class="btn" onclick="addToCart('लाल मिरची पावडर नंबर 2')">Add</button>
+        </div>
 
     </div>
 </section>
 
-<!-- CART SECTION -->
 <section id="cartSection">
     <h2>आपला ऑर्डर</h2>
     <ul id="cartItems"></ul>
@@ -259,7 +316,6 @@
     </form>
 </section>
 
-<!-- CONTACT SECTION -->
 <section id="contact">
     <h2>संपर्क</h2>
     <p>आपण आमच्याशी थेट संपर्क साधू शकता:</p>
@@ -268,7 +324,6 @@
        📍 नाशिक, महाराष्ट्र</p>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <p>© 2026 गजानन पापड | नाशिक | संपर्क: <a href="tel:9890746892" style="color:white;">9890746892</a></p>
 </footer>
@@ -314,7 +369,6 @@ function sendWhatsAppOrder() {
     const url = `https://wa.me/919890746892?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 
-    // Optionally save user info
     localStorage.setItem('userName', name);
     localStorage.setItem('userMobile', mobile);
     localStorage.setItem('userAddress', address);
