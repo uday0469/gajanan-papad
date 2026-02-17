@@ -260,7 +260,6 @@
     <h2>आमची उत्पादने</h2>
     <div class="products">
 
-        <!-- Product Cards -->
         <div class="card">
             <img src="udid.jpg" alt="उडीद पापड">
             <h3>उडीद पापड</h3>
@@ -283,6 +282,54 @@
             <img src="sabudana.jpg" alt="साबुदाणा पापड">
             <h3>साबुदाणा पापड</h3>
             <a class="btn" onclick="openOrderModal('साबुदाणा पापड')">ऑर्डर करा</a>
+        </div>
+
+        <div class="card">
+            <img src="bibadi.jpg" alt="स्पेशल खान्देशी बिबडी">
+            <h3>स्पेशल खान्देशी बिबडी</h3>
+            <a class="btn" onclick="openOrderModal('स्पेशल खान्देशी बिबडी')">ऑर्डर करा</a>
+        </div>
+
+        <div class="card">
+            <img src="lemon.jpg" alt="लिंबू लोणचे">
+            <h3>लिंबू लोणचे</h3>
+            <a class="btn" onclick="openOrderModal('लिंबू लोणचे')">ऑर्डर करा</a>
+        </div>
+
+        <div class="card">
+            <img src="mango.jpg" alt="आंबा लोणचे">
+            <h3>आंबा लोणचे</h3>
+            <a class="btn" onclick="openOrderModal('आंबा लोणचे')">ऑर्डर करा</a>
+        </div>
+
+        <div class="card">
+            <img src="anarse.jpg" alt="अनारसे इंस्टंट पीठ">
+            <h3>अनारसे इंस्टंट पीठ (स्पेशल)</h3>
+            <a class="btn" onclick="openOrderModal('अनारसे इंस्टंट पीठ (स्पेशल)')">ऑर्डर करा</a>
+        </div>
+
+        <div class="card">
+            <img src="lal_mirchi1.jpg" alt="लाल मिरची पावडर नंबर 1">
+            <h3>लाल मिरची पावडर नंबर 1</h3>
+            <a class="btn" onclick="openOrderModal('लाल मिरची पावडर नंबर 1')">ऑर्डर करा</a>
+        </div>
+
+        <div class="card">
+            <img src="haldi.jpg" alt="हळद पावडर">
+            <h3>हळद पावडर</h3>
+            <a class="btn" onclick="openOrderModal('हळद पावडर')">ऑर्डर करा</a>
+        </div>
+
+        <div class="card">
+            <img src="dhana.jpg" alt="धना पावडर">
+            <h3>धना पावडर</h3>
+            <a class="btn" onclick="openOrderModal('धना पावडर')">ऑर्डर करा</a>
+        </div>
+
+        <div class="card">
+            <img src="lal_mirchi2.jpg" alt="लाल मिरची पावडर नंबर 2">
+            <h3>लाल मिरची पावडर नंबर 2</h3>
+            <a class="btn" onclick="openOrderModal('लाल मिरची पावडर नंबर 2')">ऑर्डर करा</a>
         </div>
 
     </div>
@@ -353,16 +400,10 @@
         const mobile = document.getElementById('orderMobile').value.trim();
         const address = document.getElementById('orderAddress').value.trim();
 
-        if(!qty || qty <= 0) {
-            alert("कृपया वैध प्रमाण भरा");
-            return;
-        }
-        if(!name || !mobile || !address) {
-            alert("कृपया सर्व माहिती भरा");
-            return;
-        }
+        if(!qty || qty <= 0) { alert("कृपया वैध प्रमाण भरा"); return; }
+        if(!name || !mobile || !address) { alert("कृपया सर्व माहिती भरा"); return; }
 
-        // Save to localStorage for future orders
+        // Save to localStorage
         localStorage.setItem('userName', name);
         localStorage.setItem('userMobile', mobile);
         localStorage.setItem('userAddress', address);
